@@ -1,0 +1,165 @@
+Whole Document Styling
+*{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    }
+
+/*Body Styling*/
+body {
+        height: 100%;
+    background: linear-gradient(90deg,#e74c3c 70%, #fff 30%);
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+}
+
+/*Style RedWood Logo*/
+.logoClass {
+    height: 111px;
+    width: 220px;
+}
+
+/*Edit Attendance Record List*/
+.attendanceList {
+    list-style: none;
+}
+.myNavbar {
+    margin-bottom: 0px;
+    padding-bottom: 50px
+}
+/*Styling For Those Elements On The Right Side Of The Page*/
+.rightHalf {
+    font-family: 'Lato', sans-serif;
+    color: black
+}
+
+
+/*Styling For Those Elements On The Left Side Of The Page*/
+.leftHalf {
+    font-family: 'Lato', sans-serif;
+    color: #fff
+}
+
+/*Styling For The Legends On The Left Side Of The Page*/
+.legendClassLeft {
+    font-family: 'Lato', sans-serif;
+    color: #fff;    
+    font-size: 19px;
+    border-bottom: 1px solid white    
+}
+
+/*Styling For The Legends On The Right Side Of The Page*/
+.legendClassRight {
+    font-family: 'Lato', sans-serif;
+    font-size: 19px;
+    color: black;
+    border-bottom: 1px solid black    
+}
+
+/*Styling For The Input Fields*/
+.inputClass {
+    font-family: 'Lato', sans-serif;
+    font-size: 19px;
+    color: black
+}
+
+/*Styling For The Select Fields*/
+.selectClass {
+  font-family: 'Lato', sans-serif;
+    color: black
+}
+
+/*Styling For The Student Drop Down Menus*/
+.dropDownStudentOptions {
+  font-family: 'Lato', sans-serif;
+    color: black
+}
+
+/*Styling For The Student Drop Down Attendance Item Menu*/
+.dropDownAttendanceOptions {
+  font-family: 'Lato', sans-serif;
+    color: black
+}
+/*Styling For The Student Information Displayed On The Right*/
+.displayInfoRight {
+  font-family: 'Lato', sans-serif;
+    color: white
+}
+
+/*Styling For The Attendance Buttons*/
+.attendanceButton {
+      font-family: 'Lato', sans-serif;
+    color: black
+}
+
+/*Styling For THe Labels*/
+.labelClass {
+font-family: 'Lato', sans-serif;
+font-weight: 400;
+font-size: 16px;
+margin-top: 5px;
+margin-bottom: 5px;
+display: block;
+width: 100%
+}
+
+/*Styling For Second Column*/
+.secondColumn {
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 45%
+}
+/*Styling For Third Column*/
+.thirdColumn {
+    margin-top: 20px;
+    margin-right: 95px;
+        margin-left: 0px;
+    width: 16%
+}
+/*Styling For Entire Container*/
+.container {
+    width: 100%
+}
+
+/*Styling For Right Half Of Page*/
+.rightHalf {
+    margin-right: 34px;
+    margin-top: 20px;
+
+}
+
+/*Styling For Left Half Of Page*/
+.leftHalf {
+    margin-left: 34px;
+    width: 20%
+}
+
+/*Styling For All Columns*/
+/*.col-lg-4 {
+    width: 30%
+}*/
+
+.displayClass {
+    width: 33%
+}
+/*.displayRow {
+    width: 100%
+}*/
+
+.specialClass {
+     font-family: 'Lato', sans-serif;
+    font-size: 19px;
+    color: black;
+    border-bottom: 1px solid black  ;
+padding-top: 40px;
+}
+
+/*Styling For All Buttons*/
+.attendanceButton {
+    display: block;
+}
+#editButton {
+    height: 11px;
+    width: 11px
+}

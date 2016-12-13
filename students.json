@@ -1,0 +1,124 @@
+{
+    "students": [
+        {
+            "id": 0,
+            "fName": "Harold",
+            "lName": "Spanish",
+            "personalAttendance": [],
+            "timesLate": 0,
+            "timesOnTime": 0,
+            "totalPresent": 0,
+            "totalAbsences": 0,
+            "totalExcusedAbsences": 0,
+            "totalUnexcusedAbsences": 0
+        },
+        {
+            "id": 1,
+            "fName": "Bill",
+            "lName": "Prunes",
+            "personalAttendance": [],
+            "timesLate": 0,
+            "timesOnTime": 0,
+            "totalPresent": 0,
+            "totalAbsences": 0,
+            "totalExcusedAbsences": 0,
+            "totalUnexcusedAbsences": 0
+        },
+        {
+            "id": 2,
+            "fName": "Tulley",
+            "lName": "Tom",
+            "personalAttendance": [],
+            "timesLate": 0,
+            "timesOnTime": 0,
+            "totalPresent": 0,
+            "totalAbsences": 0,
+            "totalExcusedAbsences": 0,
+            "totalUnexcusedAbsences": 0
+        },
+        {
+            "id": 3,
+            "fName": "Nevil",
+            "lName": "Music",
+            "personalAttendance": [],
+            "timesLate": 0,
+            "timesOnTime": 0,
+            "totalPresent": 0,
+            "totalAbsences": 0,
+            "totalExcusedAbsences": 0,
+            "totalUnexcusedAbsences": 0
+        },
+        {
+            "id": 4,
+            "fName": "Christoph",
+            "lName": "Ramada",
+            "personalAttendance": [],
+            "timesLate": 0,
+            "timesOnTime": 0,
+            "totalPresent": 0,
+            "totalAbsences": 0,
+            "totalExcusedAbsences": 0,
+            "totalUnexcusedAbsences": 0
+        },
+        {
+            "id": 5,
+            "fName": "Michael",
+            "lName": "Gelato",
+            "personalAttendance": [],
+            "timesLate": 0,
+            "timesOnTime": 0,
+            "totalPresent": 0,
+            "totalAbsences": 0,
+            "totalExcusedAbsences": 0,
+            "totalUnexcusedAbsences": 0
+        },
+        {
+            "id": 6,
+            "fName": "Crazy",
+            "lName": "Kidoo",
+            "personalAttendance": [],
+            "timesLate": 0,
+            "timesOnTime": 0,
+            "totalPresent": 0,
+            "totalAbsences": 0,
+            "totalExcusedAbsences": 0,
+            "totalUnexcusedAbsences": 0
+        },
+        {
+            "id": 7,
+            "fName": "Jimmy",
+            "lName": "Torrance",
+            "personalAttendance": [],
+            "timesLate": 0,
+            "timesOnTime": 0,
+            "totalPresent": 0,
+            "totalAbsences": 0,
+            "totalExcusedAbsences": 0,
+            "totalUnexcusedAbsences": 0
+        },
+        {
+            "id": 8,
+            "fName": "Shane",
+            "lName": "Rod",
+            "personalAttendance": [],
+            "timesLate": 0,
+            "timesOnTime": 0,
+            "totalPresent": 0,
+            "totalAbsences": 0,
+            "totalExcusedAbsences": 0,
+            "totalUnexcusedAbsences": 0
+        },
+        {
+            "id": 9,
+            "fName": "Stinky",
+            "lName": "LaBeef",
+            "personalAttendance": [],
+            "timesLate": 0,
+            "timesOnTime": 0,
+            "totalPresent": 0,
+            "totalAbsences": 0,
+            "totalExcusedAbsences": 0,
+            "totalUnexcusedAbsences": 0
+        }
+    ]
+}

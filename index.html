@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="en-US" ng-app="apps">
+
+<meta charset="UTF-8">
+
+<head>
+
+	<meta charset="UTF-8">
+
+	<!-- jQuery -->
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+		crossorigin="anonymous"></script>
+	<!--Angular-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+		crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+		crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
+
+	<!--Link to My Style Sheet-->
+	<link rel="stylesheet" href="./CSS FILES/AttendanceStyles.css">
+
+	<!--Corner Document Title-->
+	<title>Document</title>
+
+</head>
+
+<body ng-controller="theController">
+
+	<div class="container">
+
+		<!--navigation bar code-->
+		<div class="row  collapse navbar-collapse myNavbar" id="main-navbar" role="navigation">
+
+			<div class="col-lg-4">
+
+				<!--Redwood Logo-->
+				<img src="Redwood-Logo.png" alt="Redwood Logo" class="logoClass">
+
+			</div>
+
+			<div class="col-lg-4">
+
+				<!--Title for Page-->
+				<h1 class="navbarHeading"></h1>
+
+			</div>
+
+			<div class="col-lg-4 offPageLinks"></div>
+
+			<!--Staged Off Page Links-->
+
+		</div>
+
+		<!--All Functional Fields-->
+		<div class="row">
+
+			<!--Adding New Attendance Items Options-->
+			<div class="col-lg-4 leftHalf form-group divForNameButtons">
+
+				<h2 class="studentOptions"></h2>
+
+				<form>
+					<legend class="legendClassLeft">Add New Attendance Record: </legend>
+					<!--Select Day To Add Attendace For-->
+					<label class="labelClass" for="dateLabel"> Select Day's Attendance </label>
+					<input class="inputClass" type="date" ng-model="newAttendanceByDate">
+
+					<!--Select Student To Add Attendace For-->
+					<label class="labelClass" for="studentNewLabel"> Select Student </label>
+					<select name="studentsNew" multiple="multiple" class="dropDownStudentOptions" id="myStudentsMenu" ng-change="selectedNewCurrentStudent()"
+						ng-model="studentNewId">
+                                   <option ng-repeat="studentNew in students" value="{{ studentNew.id }}">
+                                       {{ studentNew.fName }} 
+                                       </option> 
+                            </select>
+
+					<!--Select If Student Is In Class Or Not-->
+					<label class="labelClass" for="presenceLabel"> Present or Absent? </label>
+					<select class="selectClass" name="record" id="myRecordChoiceMenu" ng-model="hereOrNot">
+                                <option value="Present">
+                                    Present
+                                </option>
+                                
+                                <option value="Absent">
+                                    Absent
+                                </option>
+                            </select>
+
+					<!--Select If Absence Is Excused Or Not-->
+					<label class="labelClass" for="excusedLabel"> Was the Absence Excused? </label>
+					<select class="selectClass" name="record" id="myRecordChoiceMenu" ng-model="excusedOrNot">
+                                <option value="null">
+                                   N/A
+                                </option>
+                                
+                                <option value="Excused">
+                                    Yes
+                                </option>
+                                
+                                <option value="Unexcused">
+                                    No
+                                </option>
+                            </select>
+
+					<!--Select If Student Is Late Or Not-->
+					<label class="labelClass" for="lateLabel"> Was the Student Late?</label>
+					<select class="selectClass" name="record" id="myRecordChoiceMenu" ng-model="lateOrNot">
+                                <option value="null">
+                                    N/A
+                                </option>
+                                
+								<option value="Late">
+                                    Yes
+                                </option>
+                                
+                                <option value="On Time">
+                                    No
+                                </option>
+                            </select>
+
+					<!--Button To Add New Attendance Item-->
+					<button ng-click="addNewAttendance()" class="attendanceButton btn">
+                            Add New
+                </button>
+
+				</form>
+
+			</div>
+
+			<!--Displays Attendance Record For Class On SelectedDate-->
+			<div class="col-lg-4 secondColumn">
+				<div class="row displayRow">
+					<div class="col-lg-4 displayClass">
+
+						<form>
+							<legend class="legendClassLeft">Attendance By Date: {{dateSelection | date}}</legend>
+
+
+							<!--Lists All Attendance Records For The Selected Date-->
+							<ul class="attendanceForDateList" ng-repeat="student in students">
+								<li ng-repeat="attendance in student.personalAttendance | studentDateFilter: dateSelection ">{{attendance.theStudent.fName}}<br/>{{attendance.theDate | date}}<br/>{{attendance.thePresence}}<br/>{{attendance.theDetail}}<br/></li>
+							</ul>
+						</form>
+					</div>
+					<div class="col-lg-4 displayClass">
+						<form>
+							<legend class="legendClassLeft"> Attendance By Student: {{currentStudent.fName}}</legend>
+
+							<!--Lists All Attendance Records For The Selected Student-->
+							<ul class="attendanceForStudentList">
+								<li class="attendanceForDateList" ng-repeat="item in currentStudent.personalAttendance"> {{item.theDate | date}} <br/> {{item.thePresence}} <br/> {{item.theDetail}}
+									<button class="btn btn-danger" id=" editButton" ng-click="deleteSelectedAttendance(item)">X</button>
+								</li>
+
+							</ul>
+						</form>
+					</div>
+					<!--Display Student Statistics-->
+					<div class="col-lg-4 displayClass">
+						<form>
+							<legend class="legendClassLeft"> Statistics: {{currentStudent.fName}} </legend>
+							<div ng-include="'./statistics.html'"> </div>
+
+						</form>
+					</div>
+
+				</div>
+			</div>
+
+
+			<!--Displays Attendance Record For The Selected Student-->
+			<div class="col-lg-4 thirdColumn pull-right">
+				
+
+					<form>
+						<div class="row">
+							<legend class="legendClassRight">Select A Date To Display:</legend>
+
+							<!--Select Attendance Date-->
+							<input class="inputClass" type="date" ng-model="attendanceByDate">
+
+							<!--Button To Display All Attendance Records For Selected Date-->
+							<button ng-click="getSelectedDate()" class="attendanceButton btn">
+                            Get Date Record
+                </button>
+					</form>
+					</div>
+					<div class="row">
+						<form>
+							<legend class="specialClass">Select A Student To Display: </legend>
+							<!--Select Student-->
+							<div class="form-group divForNameButtons">
+
+								<select name="students" multiple="multiple" class="dropDownStudentOptions" id="myStudentsMenu" ng-model="studentId">
+                                   <option ng-repeat="student in students" value="{{ student.id }}">
+                                       {{ student.fName }} 
+                                       </option> 
+                            </select>
+
+								<!--Button To Display Selected Student's Attendance Record-->
+								<button ng-click="selectedCurrentStudent()" class="attendanceButton btn">
+                            Get Student Record
+                </button>
+							</div>
+
+						</form>
+					
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<!--Attatch JavaScript App and Controller Documents-->
+	<script src="./AttendanceApp.js"></script>
+	<script src="./Services/services.js"></script>
+	<script src="./Controllers/AttendanceController.js"></script>
+
+</body>
+
+</html>
